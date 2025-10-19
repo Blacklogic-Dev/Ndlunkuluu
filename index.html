@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queen Asanda | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Boot Sequence */
+    #boot-sequence {
+      font-size: 1.5rem;
+      color: #ff00cc;
+      text-shadow: 0 0 12px #ff00cc;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ff00cc;
+      width: 0;
+      margin: 100px auto;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing { from { width: 0; } to { width: 360px; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    header {
+      padding: 60px 20px 30px;
+      display: none;
+      opacity: 0;
+      background: linear-gradient(to right, #000, #141414);
+      transition: opacity 1s ease-in;
+    }
+
+    .top-image {
+      width: 270px;
+      object-fit: contain;
+      margin: 0 auto 25px auto;
+      filter: drop-shadow(0 0 15px #ff00cc);
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { filter: drop-shadow(0 0 10px #ff00cc); }
+      to { filter: drop-shadow(0 0 25px #ff33cc); }
+    }
+
+    header h1 {
+      color: #ff00cc;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #ff00cc;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ff33cc;
+    }
+
+    .tech-item i {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #ff33cc, 0 0 20px #ff33cc;
+      animation: neonPulse 2s infinite alternate;
+      margin-bottom: 5px;
+    }
+
+    @keyframes neonPulse {
+      from { opacity: 0.7; text-shadow: 0 0 8px #ff33cc, 0 0 15px #ff33cc; }
+      to { opacity: 1; text-shadow: 0 0 25px #ff66ff, 0 0 40px #ff66ff; }
+    }
+
+    /* Achievements */
+    .achievements {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .achievements div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    .achievements i {
+      font-size: 2.2rem;
+      color: #ff00cc;
+      margin-bottom: 10px;
+      animation: pulseIcon 3s infinite alternate;
+    }
+
+    @keyframes pulseIcon {
+      from { text-shadow: 0 0 5px #ff00cc; }
+      to { text-shadow: 0 0 20px #ff33cc; }
+    }
+
+    .counter {
+      font-size: 1.8rem;
+      color: #ff66ff;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* About Button */
+    .about-btn {
+      background: #ff00cc;
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #ff00cc;
+    }
+
+    .about-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff00cc;
+    }
+
+    /* Navigation */
+    nav {
+      background: #111;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(255, 0, 204, 0.3);
+    }
+
+    nav div {
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav a i {
+      font-size: 1.5rem;
+      margin-bottom: 3px;
+    }
+
+    nav a:hover {
+      color: #ff00cc;
+      text-shadow: 0 0 10px #ff00cc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Boot Sequence -->
+  <div id="boot-sequence">Loading Quinn System...</div>
+
+  <!-- Main Header -->
+  <header id="main-content">
+    <img src="Quin.png" alt="Queen Asanda Suit" class="top-image">
+    <h1>Powered by Emotion. Designed by Intelligence.</h1>
+    <p>Welcome to the official portfolio of <strong>Queen Asanda</strong></p>
+
+    <!-- Tech Stack -->
+    <div class="tech-stack">
+      <div class="tech-item"><i class="fab fa-html5"></i><span>HTML</span></div>
+      <div class="tech-item"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+      <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+      <div class="tech-item"><i class="fas fa-pen-nib"></i><span>Design</span></div>
+    </div>
+
+    <!-- Counters -->
+    <div class="achievements">
+      <div>
+        <i class="fas fa-users"></i>
+        <span class="counter">Ndlunkuluu</span>
+        <p>Community</p>
+      </div>
+      <div>
+        <i class="fab fa-tiktok"></i>
+        <span class="counter">9.7K</span>
+        <p>TikTok Followers</p>
+      </div>
+      <div>
+        <i class="fab fa-facebook"></i>
+        <span class="counter">1.6K</span>
+        <p>Facebook Followers</p>
+      </div>
+    </div>
+    <!-- Achievements / Counters Section -->
+<div class="achievements" style="display:flex; justify-content:center; gap:50px; margin:50px 0;">
+  <div style="text-align:center;">
+    <i class="fas fa-mobile-alt" style="font-size:50px; color:#ff4dd2;"></i>
+    <span id="appsCounter" class="counter" style="font-size:40px; display:block; color:#ff4dd2;">0</span>
+    <p style="color:#fff; font-weight:bold;">Live Apps</p>
+  </div>
+  <div style="text-align:center;">
+    <i class="fas fa-certificate" style="font-size:50px; color:#ff4dd2;"></i>
+    <span id="certCounter" class="counter" style="font-size:40px; display:block; color:#ff4dd2;">0</span>
+    <p style="color:#fff; font-weight:bold;">Certificates</p>
+  </div>
+</div>
+
+<!-- Counter Script -->
+<script>
+  function animateCounter(id, target) {
+    let counter = document.getElementById(id);
+    let count = 0;
+    let increment = target / 100; // Adjust speed
+    let interval = setInterval(() => {
+      count += increment;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      counter.innerText = Math.floor(count);
+    }, 20); // 20ms interval
+  }
+
+  // Run counters
+  animateCounter("appsCounter", 26);
+  animateCounter("certCounter", 7);
+</script>
+
+    <!-- Certificates -->
+    <a href="about.html" class="about-btn">About</a>
+  </header>
+
+  <!-- Boot and animation -->
+  <script>
+    setTimeout(() => {
+      document.getElementById("boot-sequence").style.display = "none";
+      const main = document.getElementById("main-content");
+      main.style.display = "block";
+      setTimeout(() => { main.style.opacity = 1; }, 100);
+    }, 3500);
+  </script>
+</body>
+</html>

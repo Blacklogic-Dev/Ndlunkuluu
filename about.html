@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Quinn Asanda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* === HERO === */
+    .hero, .collab-hero {
+      position: relative;
+      text-align: center;
+      margin: 40px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 20%;
+      overflow: hidden;
+      border: 3px solid #ff00d4;
+      box-shadow: 0 0 25px #ff00d4;
+    }
+
+    .hero img, .collab-hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .hero img.active, .collab-hero img.active {
+      opacity: 1;
+    }
+
+    .hero h1 {
+      color: #ff00d4;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      margin-top: 20px;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    /* === Sections === */
+    section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    section h2 {
+      color: #ff00d4;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ff00d4;
+    }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .logo-item {
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .logo-item img {
+      width: 90px;
+      height: auto;
+      filter: drop-shadow(0 0 10px #ff00d4);
+      transition: 0.4s;
+    }
+
+    .logo-item:hover img {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 25px #ff00d4);
+    }
+
+    .logo-item p {
+      margin-top: 8px;
+      color: #eee;
+      font-size: 0.9rem;
+    }
+
+    .username {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    /* === UVP === */
+    .uvp {
+      background: linear-gradient(135deg, #1a0019, #0a0a0a);
+      border-left: 3px solid #ff00d4;
+      border-right: 3px solid #ff00d4;
+      padding: 30px;
+      margin: 40px auto;
+      width: 85%;
+      border-radius: 18px;
+      box-shadow: 0 0 20px rgba(255, 0, 212, 0.3);
+      text-align: center;
+    }
+
+    .uvp p {
+      line-height: 1.7;
+      color: #d1d5db;
+    }
+
+    /* === Collaboration === */
+    .collab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at center, #111 60%, #000 100%);
+      text-align: center;
+    }
+
+    .collab-hero {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px #00e0ff;
+      border: 2px solid #00e0ff;
+    }
+
+    .collab-hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .collab-hero img.active {
+      opacity: 1;
+    }
+
+    .collab-text p {
+      max-width: 600px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    /* === Navigation === */
+    nav {
+      background: #111827;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(255, 0, 212, 0.3);
+      z-index: 100;
+    }
+
+    nav .menu {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-align: center;
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff00d4;
+    }
+
+    nav i {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (min-width: 768px) {
+      .collab {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        text-align: left;
+      }
+
+      .collab-text p {
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HERO -->
+  <div class="hero">
+    <img src="Quinn.jpg" class="active" alt="Quinn Asanda">
+    <img src="Asa.jpg" alt="Ndlunkulu Asanda">
+    <h1>Quinn Asanda</h1>
+    <p>AI Designer & UX/UI Practitioner</p>
+  </div>
+
+  <!-- 🌍 Global Connections -->
+  <section>
+    <h2>🌍 Global Connections</h2>
+    <p class="username">@Ndlunkulu_Asanda</p>
+    <div class="logos">
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="Facebook">
+        <p>2.4K Followers</p>
+      </div>
+      <div class="logo-item">
+        <img src="TikTok.png" alt="TikTok">
+        <p>14.6K Likes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🏆 Global Accreditations -->
+  <section>
+    <h2>🏆 Creative Expertise</h2>
+    <div class="logos">
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Design Studio">
+        <p>UX/UI Design Research</p>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+        <p>AI Aesthetic Collaboration</p>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+        <p>UX Cloud Systems</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌸 Unique Value Proposition -->
+  <div class="uvp">
+    <p>
+      I am <strong>Quinn Asanda</strong> — a digital visionary and AI Designer merging elegance, empathy, and code.  
+      Partnering with <strong>BlackLogic Mkholo</strong>, I craft intelligent visuals that speak the language of emotion and innovation.  
+      Together, we build experiences that heal, teach, and connect through <em>AsaLogicCare</em> and beyond.
+    </p>
+  </div>
+
+  <!-- 💖 Collaboration -->
+  <section class="collab">
+    <div class="collab-hero">
+      <img src="Logic.png" class="active" alt="BlackLogic">
+      <img src="Fits.png" alt="Mthokozisi">
+    </div>
+    <div class="collab-text">
+      <h2>🤝 Collaboration</h2>
+      <p>
+        Working alongside <strong>BlackLogic Mkholo</strong>, we redefine creativity with AI — blending logic, design, and compassion.  
+        Together, we craft systems that empower mental clarity, human connection, and digital wellness.
+      </p>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="menu">
+      <a href="index.html">
+        <i class="fas fa-home"></i>Home
+      </a>
+      <a href="Certificate.html">
+        <i class="fas fa-certificate"></i>Certificates
+      </a>
+      <a href="project.html">
+        <i class="fas fa-laptop-code"></i>Projects
+      </a>
+      <a href="live.html">
+        <i class="fas fa-globe"></i>Live Apps
+      </a>
+    </div>
+  </nav>
+
+  <footer>© 2025 Quinn Asanda | All Rights Reserved</footer>
+
+  <script>
+    function cycleImages(selector) {
+      const container = document.querySelector(selector);
+      const imgs = container.querySelectorAll('img');
+      let current = 0;
+      setInterval(() => {
+        imgs[current].classList.remove('active');
+        current = (current + 1) % imgs.length;
+        imgs[current].classList.add('active');
+      }, 4000);
+    }
+
+    cycleImages('.hero');         // Quinn overlay
+    cycleImages('.collab-hero');  // BlackLogic overlay
+  </script>
+</body>
+</html>
